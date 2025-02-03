@@ -1,0 +1,401 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+header {
+  background-color: white;
+}
+
+/* Sticky header container - initially hidden offscreen */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* Start hidden by moving it above the viewport */
+  transform: translateY(-100%);
+  /* Animate the transform property */
+  transition: transform 0.3s ease-out;
+}
+
+/* When the sticky header is visible, slide it into place */
+.sticky-header.visible {
+  transform: translateY(0);
+}
+
+/* Inner container to align items inline */
+.sticky-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: relative;
+}
+
+/* Make sure the two buttons are inline and spaced out */
+.sticky-buttons {
+  display: flex;
+  width: 90%;
+  gap: 10px;
+}
+
+/* (Optional) You can adjust the burger menu styling as needed */
+.sticky-burger .burger-menu span {
+  height: 3px;
+  width: 25px;
+  margin: 2px;
+  background: #000;
+  display: block;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.burger-menu {
+  display: none; 
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #004B59;
+  font-weight: bold;
+}
+
+.call-us {
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
+  margin: 10px auto; 
+  padding: 0 20px; 
+  box-sizing: border-box;
+}
+
+/* Updated .btn to allow text to fit properly */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background-color: #e60050;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1; 
+  box-sizing: border-box; 
+  text-align: center;
+}
+
+/* Hover effect */
+.btn:hover {
+  background-color: #c50045;
+}
+
+/* Icons inside the buttons */
+.icon {
+  font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  .burger-menu span {
+    height: 3px;
+    width: 25px;
+    margin: 2px;
+    background: #000;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%; /* Changed from 60px to 100% to align directly under the container */
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding: 1em 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-links.active {
+    display: flex;
+    z-index: 1200; /* Ensures it’s above the sticky header */
+  }
+  
+  .nav-links li {
+    text-align: center;
+    padding: 0.5em 0;
+  }
+}
+
+.our-cleaning-services {
+  background-image: url("../Assets/BackgroundImage01.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 32px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.our-cleaning-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.our-cleaning-services-inner {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  border-radius: 8px;
+}
+
+.our-cleaning-services-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.our-cleaning-services-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: start;
+}
+
+.our-cleaning-services-button .btn {
+  background-color: #071d49;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.our-cleaning-services-button .btn:hover {
+  background-color: #c50045;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .our-cleaning-services-title {
+    font-size: 2rem;
+  }
+
+  .our-cleaning-services-description {
+    font-size: 1rem;
+  }
+
+  .Our-cleaning-services-button .btn {
+    font-size: 1rem;
+  }
+}
+
+.how-we-can-help {
+  padding: 32px 16px 32px 16px;
+}
+
+.how-we-can-help-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.how-we-can-help-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: start;
+}
+
+.how-we-can-help-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.how-we-can-help-button {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  /* Increase top padding so the icon sits within the container */
+  padding: 16px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.3s ease;
+  position: relative; /* Needed for absolutely positioned icon */
+  margin-top: 32px;
+}
+
+.how-we-can-help-button-logo {
+  width: 40px;
+  height: 40px;
+  background-color: #16161D;
+  border-radius: 50%;
+  padding: 8px;
+  position: absolute;
+  /* Slight negative offset to overlap the inner part */
+  top: -35px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  overflow: visible;
+}
+
+.how-we-can-help-button-inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 16px; /* Adjust or remove as needed */
+}
+
+.how-we-can-help-button-inner a{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.how-we-can-help-button-inner-title{
+  width: 100%;
+}
+
+.why-choose-us-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 32px 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.why-choose-us-img{
+  width: calc(100% - 32px);
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 8px;
+}
+
+.why-choose-us-cards{
+  padding: 32px 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.why-choose-us-card{
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  border-left: 8px solid black;
+}
+
+.why-choose-us-card-check {
+  width: 6px;
+  height: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  top: 0;
+  left: 0;
+  content: '';
+  display: inline-block;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-color: black;
+  transform: rotate(45deg);
+}
+
+.why-choose-us-card-top{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-choose-us-card-title-{
+  width: 80%;
+}
+
+.circle {
+  border: 8px solid black;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  margin: 8px;
+}
+
+/* Hide dropdown content by default */
+.why-choose-us-card-bottom {
+  display: none;
+  padding: 16px;
+  background-color: #f9f9f9; 
+}
+
+/* Hide the up arrow by default */
+.dropdown-toggle.arrow-up {
+  display: none;
+}
+
+/* When the card is open, show the dropdown and swap arrows */
+.why-choose-us-card.open .why-choose-us-card-bottom {
+  display: block;
+}
+
+.why-choose-us-card.open .arrow-down {
+  display: none;
+}
+
+.why-choose-us-card.open .arrow-up {
+  display: inline; /* or block, depending on your layout */
+}
