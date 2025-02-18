@@ -7,6 +7,7 @@ body {
 
 header {
   background-color: white;
+  position: relative; /* Ensures proper positioning for child elements */
 }
 
 /* Sticky header container - initially hidden offscreen */
@@ -18,9 +19,7 @@ header {
   background-color: white;
   z-index: 1100;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  /* Start hidden by moving it above the viewport */
   transform: translateY(-100%);
-  /* Animate the transform property */
   transition: transform 0.3s ease-out;
 }
 
@@ -142,9 +141,9 @@ nav {
     flex-direction: column;
     background-color: white;
     position: absolute;
-    top: 100%; /* Changed from 60px to 100% to align directly under the container */
-    right: 0;
+    top: 100%; /* Positions menu at bottom of header */
     left: 0;
+    right: 0;
     z-index: 10;
     padding: 1em 0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -155,12 +154,40 @@ nav {
     z-index: 1200; /* Ensures it’s above the sticky header */
   }
   
+  /* Hide initially */
+  .nav-links:not(.active) {
+    display: none;
+  }
+
   .nav-links li {
     text-align: center;
     padding: 0.5em 0;
   }
 }
 
+/* Sticky header nav-links positioning */
+.sticky-header .nav-links {
+  position: fixed; /* Fixed positioning for the sticky header */
+  top: 60px; /* Height of the sticky header */
+  left: 0;
+  right: 0;
+  z-index: 1200; /* Ensure it’s above other content */
+  background-color: white; /* Match the sticky header background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+/* Main header nav-links positioning */
+header .nav-links {
+  position: absolute; /* Absolute positioning for the main header */
+  top: 100%; /* Position below the header */
+  left: 0;
+  right: 0;
+  z-index: 1200; /* Ensure it’s above other content */
+  background-color: white; /* Match the header background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+/* Combined sections */
 .our-cleaning-services {
   background-image: url("../Assets/BackgroundImage01.jpg");
   background-size: cover;
@@ -229,13 +256,13 @@ nav {
     font-size: 1rem;
   }
 
-  .Our-cleaning-services-button .btn {
+  .our-cleaning-services-button .btn {
     font-size: 1rem;
   }
 }
 
 .how-we-can-help {
-  padding: 32px 16px 32px 16px;
+  padding: 32px 16px;
 }
 
 .how-we-can-help-title {
@@ -264,16 +291,15 @@ nav {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  /* Increase top padding so the icon sits within the container */
   padding: 16px;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column;
   align-items: center;
   gap: 16px;
   text-decoration: none;
   color: #333;
   transition: box-shadow 0.3s ease;
-  position: relative; /* Needed for absolutely positioned icon */
+  position: relative;
   margin-top: 32px;
 }
 
@@ -284,8 +310,7 @@ nav {
   border-radius: 50%;
   padding: 8px;
   position: absolute;
-  /* Slight negative offset to overlap the inner part */
-  top: -35px; 
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -298,16 +323,16 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
-  margin-top: 16px; /* Adjust or remove as needed */
+  margin-top: 16px;
 }
 
-.how-we-can-help-button-inner a{
+.how-we-can-help-button-inner a {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.how-we-can-help-button-inner-title{
+.how-we-can-help-button-inner-title {
   width: 100%;
 }
 
@@ -318,52 +343,35 @@ nav {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.why-choose-us-img{
+.why-choose-us-img {
   width: calc(100% - 32px);
   margin-left: 16px;
   margin-right: 16px;
   border-radius: 8px;
 }
 
-.why-choose-us-cards{
+.why-choose-us-cards {
   padding: 32px 16px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-.why-choose-us-card{
+.why-choose-us-card {
   width: 100%;
   border-radius: 8px;
   border: 1px solid #e0e0e0;
   border-left: 8px solid black;
 }
 
-.why-choose-us-card-check {
-  width: 6px;
-  height: 12px;
-  margin-left: 8px;
-  margin-right: 8px;
-  top: 0;
-  left: 0;
-  content: '';
-  display: inline-block;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-color: black;
-  transform: rotate(45deg);
-}
-
-.why-choose-us-card-top{
+.why-choose-us-card-top {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.why-choose-us-card-title-{
+.why-choose-us-card-title {
   width: 80%;
 }
 
@@ -379,7 +387,7 @@ nav {
 .why-choose-us-card-bottom {
   display: none;
   padding: 16px;
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
 }
 
 /* Hide the up arrow by default */
@@ -397,5 +405,5 @@ nav {
 }
 
 .why-choose-us-card.open .arrow-up {
-  display: inline; /* or block, depending on your layout */
+  display: inline;
 }
