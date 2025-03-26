@@ -7,7 +7,35 @@
   <link rel="stylesheet" href="Styles/style.css">
 </head>
 <body>
-  <!-- Sticky Header -->
+  <!-- Offcanvas Menu (New Left Sliding Menu) -->
+  <nav class="offcanvas-menu">
+    <div class="offcanvas-header">
+      <button class="offcanvas-close">&times;</button>
+      <div class="offcanvas-logo">
+        <img src="assets/Logo.png" alt="Sparkling Clean Logo">
+      </div>
+    </div>
+    <div class="call-us">
+      <button class="btn estimate">
+        <img src="./Assets/calendar.svg" alt="">
+        Request a Free Estimate
+      </button>
+      <button class="btn call">
+        <img src="./Assets/phone.svg" alt="">
+        Call Us
+      </button>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Pricing</a></li>
+      <li><a href="#">Testimonials</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sticky Header (kept for buttons, without nav-links) -->
   <div class="sticky-header">
     <div class="sticky-container">
       <div class="sticky-buttons">
@@ -27,18 +55,10 @@
           <span></span>
         </div>
       </div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Pricing</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
     </div>
   </div>
 
-  <!-- Main Header -->
+  <!-- Main Header (now without inline nav-links) -->
   <header>
     <nav>
       <div class="logo">
@@ -50,14 +70,6 @@
         <span></span>
       </div>
     </nav>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
   </header>
 
   <!-- Call Us Section -->
@@ -131,7 +143,7 @@
           </a>
         </div>
       </div>
-  </div>
+    </div>
   </div>
 
   <!-- Why Choose Us Section -->
@@ -217,7 +229,6 @@
       </div>     
     </div>
   </div>
-
   <!-- Footer Section -->
   <footer>
     <p>&copy; 2025 Sparkling Clean Professional Cleaning Services</p>

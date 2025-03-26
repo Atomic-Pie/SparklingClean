@@ -1,71 +1,42 @@
-// Constants
+// Constants (sticky header remains if you need it)
 const STICKY_HEADER_HEIGHT = 60; // Adjust to match your sticky header's height
 const SCROLL_THRESHOLD = 200; // Adjust as needed
 
 // DOM Elements
 const stickyHeader = document.querySelector('.sticky-header');
-const callUsSection = document.querySelector('.call-us');
+const body = document.body;
 
-// Toggle mobile menu position
-function updateMobileMenuPosition() {
-  const activeMenu = document.querySelector('.nav-links.active');
-  if (!activeMenu) return;
-
-  // Disable transitions for instant snapping
-  activeMenu.style.transition = 'none';
-
-  if (stickyHeader.classList.contains('visible')) {
-    // Snap to sticky header
-    activeMenu.style.top = `${STICKY_HEADER_HEIGHT}px`;
-  } else {
-    // Snap to below call-us section
-    const callUsRect = callUsSection.getBoundingClientRect();
-    activeMenu.style.top = `${callUsRect.bottom + window.scrollY}px`;
-  }
-
-  // Re-enable transitions after repositioning
-  requestAnimationFrame(() => {
-    activeMenu.style.transition = '';
-  });
-}
-
-// Handle scroll events
+// Handle scroll events for sticky header visibility
 window.addEventListener('scroll', () => {
-  // Toggle sticky header visibility
   stickyHeader.classList.toggle('visible', window.scrollY > SCROLL_THRESHOLD);
-  
-  // Update menu position if open
-  updateMobileMenuPosition();
 });
 
-// Handle burger menu clicks
+// Toggle menu function
+function toggleMenu() {
+  const menu = document.querySelector('.offcanvas-menu');
+  menu.classList.toggle('active');
+  body.classList.toggle('menu-open');
+}
+
+// Toggle off-canvas menu on burger menu click
 document.querySelectorAll('.burger-menu').forEach((menu) => {
   menu.addEventListener('click', (e) => {
     e.stopPropagation();
-    
-    // Find the relevant nav-links (sticky or main header)
-    const parentContainer = menu.closest('header, .sticky-container');
-    const targetMenu = parentContainer.querySelector('.nav-links');
-
-    // Close other menus
-    document.querySelectorAll('.nav-links').forEach((nav) => {
-      if (nav !== targetMenu) nav.classList.remove('active');
-    });
-
-    // Toggle the clicked menu
-    targetMenu.classList.toggle('active');
-    
-    // Update position immediately
-    updateMobileMenuPosition();
+    toggleMenu();
   });
 });
 
-// Close menu when clicking outside
+// Close off-canvas menu when clicking the X (close) button
+document.querySelector('.offcanvas-close').addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+// Close off-canvas menu when clicking outside of it
 document.addEventListener('click', (e) => {
-  if (!e.target.closest('.nav-links, .burger-menu')) {
-    document.querySelectorAll('.nav-links').forEach((nav) => {
-      nav.classList.remove('active');
-    });
+  if (!e.target.closest('.offcanvas-menu') && !e.target.closest('.burger-menu')) {
+    body.classList.remove('menu-open');
+    document.querySelector('.offcanvas-menu').classList.remove('active');
   }
 });
 

@@ -1,123 +1,371 @@
-body {
+/* Global Reset */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
   font-family: Arial, sans-serif;
-  background-color: white;
+  background: #fff;
   color: #333;
 }
 
-header {
-  background-color: white;
-  position: relative; /* Ensures proper positioning for child elements */
+/* Offcanvas Menu */
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2000; /* Higher than sticky header */
+  overflow-y: auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
 }
 
-/* Sticky header container - initially hidden offscreen */
+/* When menu is active */
+.offcanvas-menu.active {
+  transform: translateX(0);
+  box-shadow: 16px 0 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Add overlay to body when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1999; /* Below menu but above everything else */
+}
+
+/* Close Button */
+.offcanvas-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #333;
+  padding: 8px;
+  z-index: 1;
+}
+
+/* Logo */
+.offcanvas-logo {
+  text-align: center;
+  margin: 40px 0 32px;
+}
+
+.offcanvas-logo img {
+  max-width: min(200px, 60%);
+  height: auto;
+}
+
+/* Menu List */
+.offcanvas-menu nav {
+  flex: 1;
+}
+
+.offcanvas-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offcanvas-menu li {
+  margin-bottom: 8px;
+}
+
+.offcanvas-menu a {
+  display: block;
+  padding: 16px 24px;
+  color: #004B59;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.offcanvas-menu a:hover {
+  background-color: #f5f5f5;
+  transform: translateX(4px);
+}
+/* Header and Sticky Header */
+header {
+  background: #fff;
+  position: relative;
+}
 .sticky-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: white;
+  background: #fff;
   z-index: 1100;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transform: translateY(-100%);
   transition: transform 0.3s ease-out;
 }
-
-/* When the sticky header is visible, slide it into place */
 .sticky-header.visible {
   transform: translateY(0);
 }
-
-/* Inner container to align items inline */
 .sticky-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
-  position: relative;
 }
-
-/* Make sure the two buttons are inline and spaced out */
 .sticky-buttons {
   display: flex;
-  width: 90%;
   gap: 10px;
+  flex: 1;
+}
+.burger-menu {
+  display: none;
+  margin-left: 16px;
 }
 
-/* (Optional) You can adjust the burger menu styling as needed */
-.sticky-burger .burger-menu span {
-  height: 3px;
-  width: 25px;
-  margin: 2px;
-  background: #000;
-  display: block;
-}
-
+/* Navigation */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1em;
 }
-
 .logo img {
   width: 150px;
 }
 
-.burger-menu {
-  display: none; 
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1em;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #004B59;
-  font-weight: bold;
-}
-
+/* Call Us Section */
 .call-us {
-  display: flex; 
-  justify-content: center; 
-  gap: 10px; 
-  margin: 10px auto; 
-  padding: 0 20px; 
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px auto;
+  padding: 0 20px;
 }
 
-/* Updated .btn to allow text to fit properly */
+/* Buttons */
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px;
-  background-color: #e60050;
-  color: white;
+  background: #e60050;
+  color: #fff;
   border: none;
   border-radius: 8px;
-  font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
-  flex: 1; 
-  box-sizing: border-box; 
-  text-align: center;
+  transition: background 0.3s;
+  flex: 1;
 }
-
-/* Hover effect */
 .btn:hover {
-  background-color: #c50045;
+  background: #c50045;
 }
-
-/* Icons inside the buttons */
 .icon {
   font-size: 16px;
+}
+
+/* Our Cleaning Services */
+.our-cleaning-services {
+  background: url("../Assets/BackgroundImage01.jpg") center/cover no-repeat;
+  padding: 32px 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.our-cleaning-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.our-cleaning-services-inner {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+  max-width: 800px;
+  margin: auto;
+  padding: 32px 16px;
+  border-radius: 8px;
+}
+.our-cleaning-services-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.our-cleaning-services-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+.our-cleaning-services-button .btn {
+  background: #071d49;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+}
+.our-cleaning-services-button .btn:hover {
+  background: #c50045;
+}
+
+/* How We Can Help */
+.how-we-can-help {
+  padding: 32px 16px;
+}
+.how-we-can-help-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.how-we-can-help-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+.how-we-can-help-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.how-we-can-help-button {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.3s;
+  position: relative;
+  margin-top: 32px;
+}
+.how-we-can-help-button-logo {
+  width: 40px;
+  height: 40px;
+  background: #16161D;
+  border-radius: 50%;
+  padding: 8px;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.how-we-can-help-button-inner {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.how-we-can-help-button-inner a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.how-we-can-help-button-inner-title {
+  width: 100%;
+}
+
+/* Why Choose Us */
+.why-choose-us-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 32px 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.why-choose-us-img {
+  width: calc(100% - 32px);
+  margin: 0 16px;
+  border-radius: 8px;
+}
+.why-choose-us-cards {
+  padding: 32px 16px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.why-choose-us-card {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-left: 8px solid #000;
+  border-radius: 8px;
+}
+.why-choose-us-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.why-choose-us-card-title {
+  flex: 1;
+  text-align: center;
+}
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid black;
+  border-radius: 50%;
+  margin: 8px;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+}
+
+.why-choose-us-card-bottom {
+  display: none;
+  padding: 16px;
+  background: #f9f9f9;
+}
+.dropdown-toggle.arrow-up {
+  display: none;
+}
+.why-choose-us-card.open .why-choose-us-card-bottom {
+  display: block;
+}
+.why-choose-us-card.open .arrow-down {
+  display: none;
+}
+.why-choose-us-card.open .arrow-up {
+  display: inline;
 }
 
 /* Responsive Styles */
@@ -128,282 +376,19 @@ nav {
     cursor: pointer;
     z-index: 11;
   }
-
   .burger-menu span {
     height: 3px;
     width: 25px;
     margin: 2px;
     background: #000;
   }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 100%; /* Positions menu at bottom of header */
-    left: 0;
-    right: 0;
-    z-index: 10;
-    padding: 1em 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav-links.active {
-    display: flex;
-    z-index: 1200; /* Ensures it’s above the sticky header */
-  }
-  
-  /* Hide initially */
-  .nav-links:not(.active) {
-    display: none;
-  }
-
-  .nav-links li {
-    text-align: center;
-    padding: 0.5em 0;
-  }
-}
-
-/* Sticky header nav-links positioning */
-.sticky-header .nav-links {
-  position: fixed; /* Fixed positioning for the sticky header */
-  top: 60px; /* Height of the sticky header */
-  left: 0;
-  right: 0;
-  z-index: 1200; /* Ensure it’s above other content */
-  background-color: white; /* Match the sticky header background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-}
-
-/* Main header nav-links positioning */
-header .nav-links {
-  position: absolute; /* Absolute positioning for the main header */
-  top: 100%; /* Position below the header */
-  left: 0;
-  right: 0;
-  z-index: 1200; /* Ensure it’s above other content */
-  background-color: white; /* Match the header background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
-}
-
-/* Combined sections */
-.our-cleaning-services {
-  background-image: url("../Assets/BackgroundImage01.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 32px 16px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.our-cleaning-services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
-.our-cleaning-services-inner {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px 16px;
-  border-radius: 8px;
-}
-
-.our-cleaning-services-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.our-cleaning-services-description {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  text-align: start;
-}
-
-.our-cleaning-services-button .btn {
-  background-color: #071d49;
-  color: white;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.our-cleaning-services-button .btn:hover {
-  background-color: #c50045;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
   .our-cleaning-services-title {
     font-size: 2rem;
   }
-
   .our-cleaning-services-description {
     font-size: 1rem;
   }
-
   .our-cleaning-services-button .btn {
     font-size: 1rem;
   }
-}
-
-.how-we-can-help {
-  padding: 32px 16px;
-}
-
-.how-we-can-help-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.how-we-can-help-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  text-align: start;
-}
-
-.how-we-can-help-buttons {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.how-we-can-help-button {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  text-decoration: none;
-  color: #333;
-  transition: box-shadow 0.3s ease;
-  position: relative;
-  margin-top: 32px;
-}
-
-.how-we-can-help-button-logo {
-  width: 40px;
-  height: 40px;
-  background-color: #16161D;
-  border-radius: 50%;
-  padding: 8px;
-  position: absolute;
-  top: -35px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-  overflow: visible;
-}
-
-.how-we-can-help-button-inner {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  flex-grow: 1;
-  margin-top: 16px;
-}
-
-.how-we-can-help-button-inner a {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.how-we-can-help-button-inner-title {
-  width: 100%;
-}
-
-.why-choose-us-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 32px 16px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.why-choose-us-img {
-  width: calc(100% - 32px);
-  margin-left: 16px;
-  margin-right: 16px;
-  border-radius: 8px;
-}
-
-.why-choose-us-cards {
-  padding: 32px 16px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.why-choose-us-card {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-  border-left: 8px solid black;
-}
-
-.why-choose-us-card-top {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.why-choose-us-card-title {
-  width: 80%;
-}
-
-.circle {
-  border: 8px solid black;
-  border-radius: 50%;
-  height: 24px;
-  width: 24px;
-  margin: 8px;
-}
-
-/* Hide dropdown content by default */
-.why-choose-us-card-bottom {
-  display: none;
-  padding: 16px;
-  background-color: #f9f9f9;
-}
-
-/* Hide the up arrow by default */
-.dropdown-toggle.arrow-up {
-  display: none;
-}
-
-/* When the card is open, show the dropdown and swap arrows */
-.why-choose-us-card.open .why-choose-us-card-bottom {
-  display: block;
-}
-
-.why-choose-us-card.open .arrow-down {
-  display: none;
-}
-
-.why-choose-us-card.open .arrow-up {
-  display: inline;
 }
