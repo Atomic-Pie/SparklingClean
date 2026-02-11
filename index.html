@@ -1,239 +1,808 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sparkling Clean</title>
-  <link rel="stylesheet" href="Styles/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Oven Cleaning Carlow & Rathvilly | Sparkling Oven</title>
+    <meta name="description" content="Expert oven cleaning in Carlow, Rathvilly & surrounding areas. Fast response, eco-friendly products, professional results. WhatsApp for instant quote with photo.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sparklingoven.ie">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sparklingoven.ie">
+    <meta property="og:title" content="Professional Oven Cleaning Carlow & Rathvilly | Sparkling Oven">
+    <meta property="og:description" content="Expert oven cleaning in Carlow, Rathvilly & surrounding areas. Fast response, eco-friendly products, professional results.">
+    <meta property="og:image" content="https://sparklingoven.ie/Assets/Logo.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sparklingoven.ie">
+    <meta property="twitter:title" content="Professional Oven Cleaning Carlow & Rathvilly | Sparkling Oven">
+    <meta property="twitter:description" content="Expert oven cleaning in Carlow, Rathvilly & surrounding areas. Fast response, eco-friendly products, professional results.">
+    <meta property="twitter:image" content="https://sparklingoven.ie/Assets/Logo.png">
+    
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Sparkling Oven",
+      "description": "Professional oven cleaning services in Carlow and surrounding areas",
+      "url": "https://sparklingoven.ie",
+      "telephone": "+353876415933",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Carlow",
+        "addressCountry": "IE"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "52.8408",
+        "longitude": "-6.9261"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Carlow"
+        },
+        {
+          "@type": "City",
+          "name": "Rathvilly"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sparkling.oven"
+      ],
+      "openingHours": "Mo-Sa 08:00-18:00"
+    }
+    </script>
 </head>
+
 <body>
-  <!-- Offcanvas Menu (New Left Sliding Menu) -->
-  <nav class="offcanvas-menu">
-    <div class="offcanvas-header">
-      <button class="offcanvas-close">&times;</button>
-      <div class="offcanvas-logo">
-        <img src="assets/Logo.png" alt="Sparkling Clean Logo">
-      </div>
-    </div>
-    <div class="call-us">
-      <button class="btn estimate">
-        <img src="./Assets/calendar.svg" alt="">
-        Request a Free Estimate
-      </button>
-      <button class="btn call">
-        <img src="./Assets/phone.svg" alt="">
-        Call Us
-      </button>
-    </div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Pricing</a></li>
-      <li><a href="#">Testimonials</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
 
-  <!-- Sticky Header (kept for buttons, without nav-links) -->
-  <div class="sticky-header">
-    <div class="sticky-container">
-      <div class="sticky-buttons">
-        <button class="btn estimate">
-          <img src="./Assets/calendar.svg" alt="Calendar">
-          Request a Free Estimate
-        </button>
-        <button class="btn call">
-          <img src="./Assets/phone.svg" alt="Phone">
-          Call Us
-        </button>
-      </div>
-      <div class="sticky-burger">
-        <div class="burger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-header">
+            <img src="Assets/Logo.png" alt="Sparkling Oven" class="mobile-logo">
+            <button class="mobile-close" aria-label="Close menu">
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Header (now without inline nav-links) -->
-  <header>
-    <nav>
-      <div class="logo">
-        <img src="./Assets/Logo.png" alt="Sparkling Clean Logo">
-      </div>
-      <div class="burger-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#why-choose">Why Choose Us</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="mobile-nav-cta">
+            <a href="tel:+353876415933" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                Call Now
+            </a>
+            <a href="https://wa.me/353876415933" target="_blank" class="btn btn-secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp
+            </a>
+        </div>
     </nav>
-  </header>
 
-  <!-- Call Us Section -->
-  <div class="call-us">
-    <button class="btn estimate">
-      <img src="./Assets/calendar.svg" alt="">
-      Request a Free Estimate
-    </button>
-    <button class="btn call">
-      <img src="./Assets/phone.svg" alt="">
-      Call Us
-    </button>
-  </div>
+    <!-- Header -->
+    <header class="header" id="home">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="Assets/Logo.png" alt="Sparkling Oven">
+            </div>
 
-  <!-- Our Cleaning Services Section -->
-  <div class="our-cleaning-services">
-    <div class="our-cleaning-services-inner">
-      <div class="our-cleaning-services-title">Our Cleaning Services</div>
-      <div class="our-cleaning-services-description">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-      </div>
-      <div class="our-cleaning-services-button">
-        <button class="btn estimate">
-          <span class="icon">📅</span>
-          Request a Free Estimate
-        </button>
-      </div>
-    </div>
-  </div>
+            <nav class="header-nav">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#why-choose">Why Choose Us</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-  <!-- How We Can Help Section -->
-  <div class="how-we-can-help">
-    <div class="how-we-can-help-title">How Molly Maid Can Meet Your Cleaning Needs</div>
-    <div class="how-we-can-help-description">
-      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.
-    </div>
-    <div class="how-we-can-help-buttons">
-      <div class="how-we-can-help-button">
-        <img class="how-we-can-help-button-logo" src="Assets/gift.svg" alt="Icon">
-        <div class="how-we-can-help-button-inner">
-          <a href="">
-            <span class="how-we-can-help-button-inner-title">Residental Services</span>
-            <img src="./Assets/right-arrow.svg" alt="">
-          </a>
+            <div class="header-actions">
+                <a href="tel:+353876415933" class="header-phone">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    087 641 5933
+                </a>
+                <a href="#contact" class="btn btn-primary btn-quote">Get Quote</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-      </div>
-      <div class="how-we-can-help-button">
-        <img class="how-we-can-help-button-logo" src="Assets/gift.svg" alt="Icon">
-        <div class="how-we-can-help-button-inner">
-          <a href="">
-            <span class="how-we-can-help-button-inner-title">Perfect Gift</span>
-            <img src="./Assets/right-arrow.svg" alt="">
-          </a>
-        </div>
-      </div>
-      <div class="how-we-can-help-button">
-        <img class="how-we-can-help-button-logo" src="Assets/gift.svg" alt="Icon">
-        <div class="how-we-can-help-button-inner">
-          <a href="">
-            <span class="how-we-can-help-button-inner-title">Practically Spotless Blog</span>
-            <img src="./Assets/right-arrow.svg" alt="">
-          </a>
-        </div>
-      </div>
-      <div class="how-we-can-help-button">
-        <img class="how-we-can-help-button-logo" src="Assets/gift.svg" alt="Icon">
-        <div class="how-we-can-help-button-inner">
-          <a href="">
-            <span class="how-we-can-help-button-inner-title">Ms. Molly Foundation</span>
-            <img src="./Assets/right-arrow.svg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+    </header>
 
-  <!-- Why Choose Us Section -->
-  <div class="why-choose-us">
-    <div class="why-choose-us-title">Why Choose Us?</div>
-    <img class="why-choose-us-img" src="/Assets/BackgroundImage02.jpg" alt="">
-    <div class="why-choose-us-cards">
-      <div class="why-choose-us-card">
-        <div class="why-choose-us-card-top">
-          <span class="circle">
-            <img src="./Assets/check.svg" alt="">
-          </span>
-          <span class="why-choose-us-card-title">
-            Backed by the Neighborly Done Right Promise
-          </span>
-          <!-- Add classes to the arrow images -->
-          <img class="dropdown-toggle arrow-down" src="./Assets/down-arrow.svg" alt="Show More">
-          <img class="dropdown-toggle arrow-up" src="./Assets/up-arrow.svg" alt="Show Less">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Carlow & Rathvilly's Trusted Oven Cleaning Experts</span>
+                <h1 class="hero-title">Professional Oven Cleaning You Can Trust</h1>
+                <p class="hero-description">
+                    Transform your oven from greasy to gleaming. Professional deep cleaning for domestic ovens across Carlow, Rathvilly and surrounding areas.
+                </p>
+                <div class="hero-buttons">
+                    <a href="tel:+353876415933" class="btn btn-white btn-large">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Call 087 641 5933
+                    </a>
+                    <a href="https://wa.me/353876415933" target="_blank" class="btn btn-outline-white btn-large">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        WhatsApp for Quote
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Fast Response
+                    </div>
+                    <div class="trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Non-Caustic Products
+                    </div>
+                    <div class="trust-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Professional Results
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- This is the dropdown content that will be toggled -->
-        <div class="why-choose-us-card-bottom">
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-          </p>
-        </div>
-      </div>
-      <div class="why-choose-us-card">
-        <div class="why-choose-us-card-top">
-          <span class="circle">
-            <img src="./Assets/check.svg" alt="">
-          </span>
-          <span class="why-choose-us-card-title">
-            Backed by the Neighborly Done Right Promise
-          </span>
-          <!-- Add classes to the arrow images -->
-          <img class="dropdown-toggle arrow-down" src="./Assets/down-arrow.svg" alt="Show More">
-          <img class="dropdown-toggle arrow-up" src="./Assets/up-arrow.svg" alt="Show Less">
-        </div>
-        <!-- This is the dropdown content that will be toggled -->
-        <div class="why-choose-us-card-bottom">
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-          </p>
-        </div>
-      </div>
-      <div class="why-choose-us-card">
-        <div class="why-choose-us-card-top">
-          <span class="circle">
-            <img src="./Assets/check.svg" alt="">
-          </span>
-          <span class="why-choose-us-card-title">
-            Backed by the Neighborly Done Right Promise
-          </span>
-          <!-- Add classes to the arrow images -->
-          <img class="dropdown-toggle arrow-down" src="./Assets/down-arrow.svg" alt="Show More">
-          <img class="dropdown-toggle arrow-up" src="./Assets/up-arrow.svg" alt="Show Less">
-        </div>
-        <!-- This is the dropdown content that will be toggled -->
-        <div class="why-choose-us-card-bottom">
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-          </p>
-        </div>
-      </div>
-      <div class="why-choose-us-card">
-        <div class="why-choose-us-card-top">
-          <span class="circle">
-            <img src="./Assets/check.svg" alt="">
-          </span>
-          <span class="why-choose-us-card-title">
-            Backed by the Neighborly Done Right Promise
-          </span>
-          <!-- Add classes to the arrow images -->
-          <img class="dropdown-toggle arrow-down" src="./Assets/down-arrow.svg" alt="Show More">
-          <img class="dropdown-toggle arrow-up" src="./Assets/up-arrow.svg" alt="Show Less">
-        </div>
-        <!-- This is the dropdown content that will be toggled -->
-        <div class="why-choose-us-card-bottom">
-          <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-          </p>
-        </div>
-      </div>     
-    </div>
-  </div>
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 Sparkling Clean Professional Cleaning Services</p>
-  </footer>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Simple Process</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">
+                    Get your oven professionally cleaned in 4 easy steps
+                </p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>Message Us</h3>
+                    <p>Contact us via WhatsApp, Facebook, or phone – whichever works best for you.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Send Photo & Location</h3>
+                    <p>Share a quick photo of your oven and let us know your area (Carlow, Rathvilly, or nearby).</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Get Quote & Confirm</h3>
+                    <p>We'll check availability for your area and provide a quote. Once confirmed, we schedule your clean.</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>We Clean On-Site</h3>
+                    <p>We arrive with all equipment and eco-friendly products. Your oven will sparkle like new!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Professional Oven Cleaning</h2>
+                <p class="section-description">
+                    Expert oven cleaning services that restore your appliances to like-new condition
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Domestic Oven Cleaning -->
+                <div class="service-card featured">
+                    <span class="service-badge">Most Popular</span>
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="9" x2="15" y2="9"></line>
+                            <line x1="9" y1="15" x2="15" y2="15"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Domestic Oven Cleaning</h3>
+                    <p class="service-description">
+                        Complete deep clean of your domestic oven. We dismantle, clean, and reassemble everything to restore your oven to showroom condition.
+                    </p>
+                    <ul class="service-features">
+                        <li>Removable parts safely dismantled & cleaned</li>
+                        <li>Racks, trays & door glass deep cleaned</li>
+                        <li>Non-caustic, eco-friendly products</li>
+                        <li>Professional results guaranteed</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Get a Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Deep Oven Restoration -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Deep Oven Restoration</h3>
+                    <p class="service-description">
+                        For ovens that haven't been cleaned in a while. We tackle the toughest grease and grime to bring your oven back to life.
+                    </p>
+                    <ul class="service-features">
+                        <li>Heavy-duty grease removal</li>
+                        <li>Stubborn stain treatment</li>
+                        <li>Complete interior restoration</li>
+                        <li>Safe for all oven types</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Get a Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Hob & Extractor Cleaning -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Hob & Extractor Cleaning</h3>
+                    <p class="service-description">
+                        Professional cleaning of hobs and extractor fans. Remove built-up grease and restore shine to your cooking surfaces.
+                    </p>
+                    <ul class="service-features">
+                        <li>All hob types cleaned</li>
+                        <li>Extractor fan deep clean</li>
+                        <li>Filter cleaning & degreasing</li>
+                        <li>Polished, streak-free finish</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Get a Quote
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- What's Included Section -->
+            <div class="whats-included">
+                <h3>What's Included in Every Clean</h3>
+                <div class="included-grid">
+                    <div class="included-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>We dismantle removable parts where safe</span>
+                    </div>
+                    <div class="included-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Deep clean of interior, racks, and trays</span>
+                    </div>
+                    <div class="included-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>No harsh caustic products used</span>
+                    </div>
+                    <div class="included-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Door glass cleaned inside and out</span>
+                    </div>
+                    <div class="included-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>All equipment and products provided</span>
+                    </div>
+                    <div class="included-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        <span>Safe for pets and family</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Sparkling Oven Difference</h2>
+                <p class="section-description">
+                    What makes us Carlow's trusted oven cleaning experts
+                </p>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Fast Response Time</h3>
+                    <p>Quick replies to messages and quotes. We understand you want your oven cleaned promptly.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Non-Caustic Products</h3>
+                    <p>We use environmentally safe cleaning products that are tough on grease but safe for your family and pets.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Professional Results</h3>
+                    <p>Years of experience delivering exceptional oven cleaning results. Your oven will look and perform like new.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Your satisfaction is our priority. We don't just clean ovens – we exceed expectations every time.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3>Local Service</h3>
+                    <p>Based in Carlow, serving Rathvilly and surrounding areas with reliable, professional service.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Trusted & Reliable</h3>
+                    <p>Carlow's trusted oven cleaning service. Professional, reliable, and always delivering on our promises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Frequently Asked Questions</span>
+                <h2 class="section-title">Your Questions Answered</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">How long does an oven clean take?</h3>
+                    <p class="faq-answer">Most domestic ovens take 1.5-2 hours for a full deep clean. Very dirty ovens may take slightly longer, but we'll let you know when we quote.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">What should I send for a quote?</h3>
+                    <p class="faq-answer">Just send us a photo of your oven (inside is helpful) and your location. We'll check if we cover your area and provide a quote quickly.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do I need to do anything before you arrive?</h3>
+                    <p class="faq-answer">No preparation needed! Just make sure the oven is switched off and cool. We bring all equipment and products needed.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Are the fumes safe? What about pets?</h3>
+                    <p class="faq-answer">Yes! We use non-caustic, eco-friendly products that are safe for your family and pets. No harsh chemical smell or dangerous fumes.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">Do you need access to water and electricity?</h3>
+                    <p class="faq-answer">Yes, we'll need access to a power socket and water supply (kitchen tap is perfect). Everything else is provided by us.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 class="faq-question">How far do you travel from Carlow?</h3>
+                    <p class="faq-answer">We're based in Carlow and regularly serve Rathvilly and surrounding areas. Send us your location and we'll confirm if we can reach you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="service-areas" id="service-areas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Service Coverage</span>
+                <h2 class="section-title">Where We Serve</h2>
+                <p class="section-description">Professional oven cleaning across the region</p>
+            </div>
+
+            <div class="service-area-content">
+                <div class="area-main">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <h3>Based in Carlow</h3>
+                    <p>Covering Rathvilly and surrounding areas depending on the job</p>
+                </div>
+                
+                <div class="area-cta">
+                    <p class="area-question">Not sure if we cover your area?</p>
+                    <div class="area-buttons">
+                        <a href="tel:+353876415933" class="btn btn-white btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Call Us
+                        </a>
+                        <a href="https://wa.me/353876415933" target="_blank" class="btn btn-outline btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "Absolutely brilliant service! My oven looked like new after their deep clean. Professional, punctual, and very thorough. Highly recommend!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Murphy</strong>
+                        <span>Carlow</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "I couldn't believe the transformation! My oven was in a terrible state and now it sparkles. Great value and fantastic results."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Michael O'Brien</strong>
+                        <span>Kilkenny</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <p class="testimonial-text">
+                        "Friendly, professional service. My oven hasn't looked this good since I bought it! Will definitely be using them again."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Emma Kelly</strong>
+                        <span>Laois</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Get In Touch</span>
+                <h2 class="section-title">Ready for a Sparkling Clean Oven?</h2>
+                <p class="section-description">
+                    Call, text, WhatsApp, or message us on Facebook to book your professional oven cleaning
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>Call or Text</p>
+                            <a href="tel:+353876415933">087 641 5933</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p>Message Us</p>
+                            <a href="https://wa.me/353876415933" target="_blank">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Facebook</h4>
+                            <p>Direct Message</p>
+                            <a href="https://www.facebook.com/sparkling.oven" target="_blank">Message on Facebook</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Service Area</p>
+                            <span>Based in Carlow</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta-box">
+                    <h3>Get Your Free Quote Today</h3>
+                    <p>Quick response guaranteed. Choose your preferred contact method:</p>
+                    <div class="contact-buttons">
+                        <a href="tel:+353876415933" class="btn btn-white btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            Call 087 641 5933
+                        </a>
+                        <a href="https://wa.me/353876415933" target="_blank" class="btn btn-outline btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+                            </svg>
+                            WhatsApp Us
+                        </a>
+                        <a href="https://www.facebook.com/sparkling.oven" target="_blank" class="btn btn-outline btn-large">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            Facebook Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Domestic Oven Cleaning</a></li>
+                        <li><a href="#services">Deep Oven Restoration</a></li>
+                        <li><a href="#services">Hob & Extractor Cleaning</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <a href="tel:+353876415933">087 641 5933</a>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>Based in Carlow</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                            <a href="https://www.facebook.com/sparkling.oven" target="_blank">Facebook</a>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            <a href="https://wa.me/353876415933" target="_blank">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sparkling Oven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
