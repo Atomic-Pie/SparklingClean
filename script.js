@@ -129,10 +129,11 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
 
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    galleryItems.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
+    // Don't add delays to gallery items - causes slowdown!
+    // const galleryItems = document.querySelectorAll('.gallery-item');
+    // galleryItems.forEach((item, index) => {
+    //     item.style.transitionDelay = `${index * 0.1}s`;
+    // });
 
     // Add active state to navigation links based on scroll position
     const sections = document.querySelectorAll('section[id]');
@@ -188,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log('Sparkling Oven website initialized successfully! 🧹✨');
     
-    // Gallery Carousel
+    // Gallery Carousel - FULLY OPTIMIZED VERSION
     const carouselTrack = document.querySelector('.gallery-track');
     const carouselItems = document.querySelectorAll('.gallery-item');
     const prevButton = document.querySelector('.gallery-nav-prev');
@@ -198,18 +199,37 @@ document.addEventListener('DOMContentLoaded', function() {
     if (carouselTrack && carouselItems.length > 0) {
         let currentIndex = 0;
         let itemsPerView = 1;
+        let cachedItemWidth = 0;
+        let cachedGap = 0;
         
-        // Calculate items per view based on screen size
+        // CRITICAL FIX: Enable GPU acceleration on the track
+        carouselTrack.style.willChange = 'transform';
+        carouselTrack.style.backfaceVisibility = 'hidden';
+        carouselTrack.style.perspective = '1000px';
+        
+        // Preload all images immediately
+        carouselItems.forEach(item => {
+            const img = item.querySelector('img');
+            if (img && img.loading) {
+                img.loading = 'eager'; // Force eager loading
+            }
+        });
+        
+        // Cache dimensions
+        function cacheDimensions() {
+            const item = carouselItems[0];
+            if (!item) return;
+            
+            // Force layout recalc once
+            cachedItemWidth = item.getBoundingClientRect().width;
+            cachedGap = parseFloat(getComputedStyle(carouselTrack).gap) || 24;
+        }
+        
+        // Calculate items per view
         function updateItemsPerView() {
             const width = window.innerWidth;
-            if (width >= 1024) {
-                itemsPerView = 3;
-            } else if (width >= 768) {
-                itemsPerView = 2;
-            } else {
-                itemsPerView = 1;
-            }
-            console.log('Items per view:', itemsPerView, 'Width:', width);
+            itemsPerView = width >= 768 ? 2 : 1;
+            cacheDimensions();
             createDots();
             updateGallery();
         }
@@ -219,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!dotsContainer) return;
             dotsContainer.innerHTML = '';
             const totalSlides = Math.ceil(carouselItems.length / itemsPerView);
-            console.log('Creating', totalSlides, 'dots');
             
             for (let i = 0; i < totalSlides; i++) {
                 const dot = document.createElement('button');
@@ -228,10 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (i === 0) dot.classList.add('active');
                 
                 dot.addEventListener('click', () => {
-                    currentIndex = i * itemsPerView;
-                    if (currentIndex > carouselItems.length - itemsPerView) {
-                        currentIndex = carouselItems.length - itemsPerView;
-                    }
+                    currentIndex = Math.min(i * itemsPerView, carouselItems.length - itemsPerView);
                     updateGallery();
                 });
                 
@@ -239,27 +255,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Update gallery position
+        // Update gallery - ULTRA FAST VERSION
         function updateGallery() {
-            const item = carouselItems[0];
-            if (!item) return;
+            // Calculate offset using cached values
+            const offset = -(currentIndex * (cachedItemWidth + cachedGap));
             
-            const itemWidth = item.offsetWidth;
-            const gap = parseFloat(getComputedStyle(carouselTrack).gap) || 24;
-            const offset = -(currentIndex * (itemWidth + gap));
-            
-            console.log('Update:', {currentIndex, itemWidth, gap, offset, itemsPerView});
-            
-            carouselTrack.style.transform = `translateX(${offset}px)`;
+            // Use translate3d for GPU acceleration
+            carouselTrack.style.transform = `translate3d(${offset}px, 0, 0)`;
             
             // Update buttons
             const maxIndex = carouselItems.length - itemsPerView;
-            if (prevButton) {
-                prevButton.disabled = currentIndex <= 0;
-            }
-            if (nextButton) {
-                nextButton.disabled = currentIndex >= maxIndex;
-            }
+            if (prevButton) prevButton.disabled = currentIndex <= 0;
+            if (nextButton) nextButton.disabled = currentIndex >= maxIndex;
             
             // Update dots
             const dots = document.querySelectorAll('.gallery-dot');
@@ -269,10 +276,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Previous button
+        // Navigation handlers
         if (prevButton) {
             prevButton.addEventListener('click', () => {
-                console.log('Prev clicked, current:', currentIndex);
                 if (currentIndex > 0) {
                     currentIndex = Math.max(0, currentIndex - itemsPerView);
                     updateGallery();
@@ -280,10 +286,8 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
         
-        // Next button
         if (nextButton) {
             nextButton.addEventListener('click', () => {
-                console.log('Next clicked, current:', currentIndex);
                 const maxIndex = carouselItems.length - itemsPerView;
                 if (currentIndex < maxIndex) {
                     currentIndex = Math.min(maxIndex, currentIndex + itemsPerView);
@@ -294,59 +298,54 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
+            const maxIndex = carouselItems.length - itemsPerView;
             if (e.key === 'ArrowLeft' && currentIndex > 0) {
                 currentIndex = Math.max(0, currentIndex - itemsPerView);
                 updateGallery();
-            } else if (e.key === 'ArrowRight' && currentIndex < carouselItems.length - itemsPerView) {
-                const maxIndex = carouselItems.length - itemsPerView;
+            } else if (e.key === 'ArrowRight' && currentIndex < maxIndex) {
                 currentIndex = Math.min(maxIndex, currentIndex + itemsPerView);
                 updateGallery();
             }
         });
         
-        // Touch/swipe support
+        // Touch support
         let touchStartX = 0;
         let touchEndX = 0;
         
         carouselTrack.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
-        });
+        }, { passive: true });
         
         carouselTrack.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-        
-        function handleSwipe() {
             const maxIndex = carouselItems.length - itemsPerView;
+            
             if (touchEndX < touchStartX - 50 && currentIndex < maxIndex) {
                 currentIndex = Math.min(maxIndex, currentIndex + itemsPerView);
                 updateGallery();
-            }
-            if (touchEndX > touchStartX + 50 && currentIndex > 0) {
+            } else if (touchEndX > touchStartX + 50 && currentIndex > 0) {
                 currentIndex = Math.max(0, currentIndex - itemsPerView);
                 updateGallery();
             }
-        }
+        }, { passive: true });
         
         // Initialize
         updateItemsPerView();
         
-        // Update on resize with debounce
-        let resizeTimeout;
+        // Optimized resize handler
+        let resizeTimer;
         window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
                 const oldItemsPerView = itemsPerView;
                 updateItemsPerView();
                 if (oldItemsPerView !== itemsPerView) {
                     currentIndex = 0;
-                    updateGallery();
                 }
             }, 250);
         });
         
-        console.log('✅ Gallery carousel initialized with', carouselItems.length, 'images');
+        console.log('✅ Gallery carousel initialized (ULTRA OPTIMIZED)');
     }
     
     // Fullscreen Lightbox
@@ -389,12 +388,23 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLightboxImage();
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
+        history.pushState({ lightboxOpen: true }, '');
     }
     
     function closeLightbox() {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+        if (history.state && history.state.lightboxOpen) {
+            history.back();
+        }
     }
+    
+    window.addEventListener('popstate', (e) => {
+        if (lightbox.classList.contains('active')) {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
     
     function updateLightboxImage() {
         if (allImages[currentLightboxIndex]) {
@@ -432,22 +442,19 @@ document.addEventListener('DOMContentLoaded', function() {
     lightboxPrev.addEventListener('click', showPrevImage);
     lightboxNext.addEventListener('click', showNextImage);
     
-    // Click outside image to close
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) {
             closeLightbox();
         }
     });
     
-    // Keyboard navigation in lightbox
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('active')) return;
-        
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowLeft') showPrevImage();
         if (e.key === 'ArrowRight') showNextImage();
     });
     
-    console.log('✅ Lightbox initialized with', allImages.length, 'images');
+    console.log('✅ Lightbox initialized');
     
 }); // End of DOMContentLoaded
