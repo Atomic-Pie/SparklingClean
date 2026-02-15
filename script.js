@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe elements for animation
-    const animateOnScroll = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .step-card, .faq-item, .gallery-item');
+    const animateOnScroll = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .step-card, .faq-item, .gallery-item, .variation-card, .benefit-card');
     animateOnScroll.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -128,12 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
     stepCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
-
-    // Don't add delays to gallery items - causes slowdown!
-    // const galleryItems = document.querySelectorAll('.gallery-item');
-    // galleryItems.forEach((item, index) => {
-    //     item.style.transitionDelay = `${index * 0.1}s`;
-    // });
 
     // Add active state to navigation links based on scroll position
     const sections = document.querySelectorAll('section[id]');
