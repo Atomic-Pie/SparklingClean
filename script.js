@@ -450,5 +450,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     console.log('✅ Lightbox initialized');
-    
+
+    // ── Tagline auto-fit ─────────────────────────────────────────────────────
+    // Keeps "Oven Cleaning / and More" at exactly 2 lines by shrinking the
+    // font whenever the element's height exceeds 2 lines at the current size.
+
+    const tagline = document.querySelector('.header-tagline');
+
+    function fitTagline() {
+        if (!tagline) return;
+        // Clear any inline override so we read the CSS-defined size
+        tagline.style.fontSize = '';
+        const maxPx = parseFloat(getComputedStyle(tagline).fontSize) || 48;
+        const lineHeight = parseFloat(getComputedStyle(tagline).lineHeight);
+        const twoLineHeight = lineHeight * 2;
+        let size = maxPx;
+        // Step down until it fits in 2 lines
+        while (tagline.scrollHeight > twoLineHeight + 2 && size > 8) {
+            size -= 0.5;
+            tagline.style.fontSize = size + 'px';
+        }
+    }
+
+    fitTagline();
+
+    const taglineObserver = new ResizeObserver(fitTagline);
+    if (tagline) taglineObserver.observe(tagline.parentElement);
+    // ─────────────────────────────────────────────────────────────────────────
+
 }); // End of DOMContentLoaded
